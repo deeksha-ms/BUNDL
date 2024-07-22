@@ -1,0 +1,54 @@
+v1.5.0
+- Added utl_call_gui, allowing GUI functions to be called without requiring the EEGLAB GUI itself to be used or a SEREEGA dataset to be loaded
+- Added source ID to pop_sereega_sources GUI and console output
+- Various documentation updates
+- Added support for new HArtMuT (Head Artefact Model using Tripoles) head models containing ocular and muscular sources alongside brain sources
+- Added atlas support, allowing sources to be selected from specified named regions. SEREEGA leadfields now have an additional atlas field containing, for each source, the name of the region it belongs to. lf_get_source_* functions have been added/adjusted to allow sources to be obtained from specific regions. lf_add_atlas_frommni2atlas can be used to add atlases to existing lead fields using the mni2atlas function from the FMRIB Software Library (not included).
+- Added electrodes argument to plot_headmodel
+- Added plot_source_moment to plot source orientation as arrow
+- Added support for lead fields generated in Brainstorm
+
+v1.2.2
+- Fixed forgotten version increment in eegplugin_sereega.m
+- Fixed forgotten documentation update reflecting 2018-06-04 utl_apply_dvslopeshift change
+
+v1.2.0
+- Added text to plot_component_signal plot indicating number of averages taken
+- Added utl_add_markers_toeeglabdataset following GitHub issue #13
+- Fixed typo in BioSemi-32 montage in utl_get_montage
+- Switched to parallel processing in generate_scalpdata where available, following GitHub issue #14, also adding utl_show_progress_parfor and utl_show_progress_timetocomplete to replace progress bar
+
+v1.1.0
+- Added electrodes argument to plot_source_projection
+- Added lf_prune_nyheadfile to reduce NY Head lead field filesize
+- Changed generate_scalpdata behaviour when one component has multiple sources. The projections from each source are now summed together. Previous behaviour, which used only one randomly chosen souce per epoch, can be reinstated with the argument legacy_rndmultsrc.
+
+v1.0.19-beta
+- Lead fields now continue with empty labels (i.e. all channels) if montage not found
+- Fixed bug in utl_shift_latency arguments
+- Added utl_apply_dvslopeshift, and replaced all calls to predecessor utl_apply_dvslope with it
+- Added utl_multigradient for updated default projection colormap
+- Added utl_epoch2continuous after GitHub issue #4
+- Fixed GitHub issue #10 where latencies were off by 1 sample in erp_generate_signal and ersp_generate_signal
+- Added shading argument to plot_source_projection
+- Fixed GitHub issue #11 where utl_multigradient was not called in plot_source_projection and plot_component_projection
+
+v1.0.11-beta
+- Fixed GitHub issue #3 in lf_get_projection
+- Fixed issue in pop_sereega_plot_headmodel
+- Improved feedback for some pop_ functions
+- Made the menu available in EEGLAB even when no dataset is loaded
+- Added utl_isvalidcomponent
+- Fixed GUI issue in plot_source_location
+
+v1.0.5-beta
+- Updated GUI with previous version's changes
+
+v1.0.4-beta
+- Added peakLatencyShift parameter to ERP class
+- Added frequencyShift parameter to ERSP class
+- Updated ERSP classes in utl_get_component_fromtemplate using frequencyShift
+- Fixed utl_apply_dvslope to never apply deviations exceeding indicated deviation value
+
+v1.0.0-beta
+- The version described in and used for the bioRxiv preprint 326066
