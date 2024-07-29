@@ -14,7 +14,7 @@ from dataloader import *
 
 
 
-def train_nal(data_root, modelname='txlstm', cvfold=1,
+def nested_train_nal(data_root, modelname='txlstm', cvfold=1,
         hparams = {'lr':1e-04, 'maxiter':10, 'eps':0.001},
                       traintype='cel',noise_type=None, version='data_v1_og',
                       use_cuda=False):
