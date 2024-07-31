@@ -17,7 +17,7 @@ Supervised learning has become the dominant paradigm in computer-aided diagnosis
 
 
 <h2> Data access </h2>
-<p>Download TUH data from: <a href="https://isip.piconepress.com/projects/tuh_eeg/">TUH Seizure Corpus</a></p>
+<p>Download TUH data from: <a href="https://isip.piconepress.com/projects/tuh_eeg/">TUH Seizure Corpus.</a> It can be preprocessed with the provided notebook. </p>
 <p>Simulated data can be recreated using the provided matlab scripts. For the exact copy of data used in paper, please email <a href="mailto:dshama1@jhu.edu">dshama1@jhu.edu</a> to setup large file transfer.</p>
 <br>
 
