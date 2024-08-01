@@ -575,5 +575,3 @@ class CNN_BLSTM_nal(nn.Module):
 
         return clean_out.reshape(B,Nsz,T, -1), noise_out.reshape(B,Nsz,T, -1), h_c.reshape(B, Nsz, T, C, -1)
 
-
-    
