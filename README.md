@@ -1,23 +1,14 @@
 # BUNDL
 Uncertainty-Aware Bayesian Deep Learning with Noisy Training Labels for Epileptic Seizure Detection <br>
-Accepted at Uncertainty for Safe Utilization of Machine Learning in Medical Imaging Workshop at MICCAI 2024 
-<br><br>
-<img src="mainmodel2.png"
-     alt="soz and det"
-     style="float: center; margin-right: 10px;" />
+Journal article currently under review <br>
+Accepted at Uncertainty for Safe Utilization of Machine Learning in Medical Imaging Workshop at MICCAI 2024 <br><br>
 
-<br>
 <h2> Abstract </h2>
-
-Supervised learning has become the dominant paradigm in computer-aided diagnosis. Generally, these methods assume that the training labels represent “ground truth” information about the target phenomena. In actuality, the labels, often derived from human annotations, are noisy/unreliable. This aleatoric uncertainty poses significant challenges for modalities such as electroencephalography (EEG), in which “ground truth” is difficult to ascertain without invasive experiments. In this paper, we propose a novel Bayesian framework to mitigate the effects of aleatoric label uncertainty in the context of supervised deep learning. Our target application is EEG-based epileptic seizure detection. Our framework, called BUNDL, leverages domain knowledge to design a posterior distribution for the (unknown) “clean labels” that automatically adjusts based on the data uncertainty. Crucially, BUNDL can be wrapped around any existing detection model and trained using a novel KL divergence-based loss function. We validate BUNDL on both a simulated EEG dataset and the Temple University Hospital (TUH) corpus using three state-of-the-art deep networks. In all cases, integrating BUNDL improves the seizure detection performance. We also demonstrate that accounting for label noise using BUNDL improves seizure onset localization from EEG by reducing false predictions from artifacts. 
-<br>
-<img src="sozvis_single.png"
-     alt="soz and det"
-     style="float: center; margin-right: 10px;" />
-
-
+Deep learning is advancing EEG processing for automated epileptic seizure detection and onset zone localization, yet its performance relies heavily on high-quality annotated training data. However, scalp EEG is susceptible to high noise levels, which in turn leads to imprecise annotations of the seizure timing and characteristics. This “label noise” presents a significant challenge in model training and generalization. In this paper, we introduce Bayesian UncertaiNty-aware Deep Learning (BUNDL), a novel algorithm that informs a deep learning model of label ambiguities, thereby enhancing the robustness of seizure detection systems. By integrating domain knowledge into an underlying Bayesian framework, we derive a novel KL-divergence-based loss function that capitalizes on uncertainty to better learn seizure characteristics from scalp EEG. Thus, BUNDL offers a straightforward and model-agnostic method for training deep neural networks with noisy training labels that does not add any parameters to existing architectures. Additionally, we explore the impact of improved detection system on the task of automated onset zone localization. We validate BUNDL using a comprehensive simulated EEG dataset and two publicly available datasets collected by Temple University Hospital (TUH) and Boston Children’s Hospital (CHB-MIT). Results show that BUNDL consistently identifies noisy labels and improves the robustness of three base models under various label noise conditions. { We also conduct ablation experiments on uncertainty quantification, evaluate cross-site generalizability to Siena EEG dataset, and quantify computational cost of all methods.} Furthermore, we demonstrate that BUNDL improves seizure onset zone localization accuracy. Ultimately, BUNDL presents as a reliable method that can be seamlessly integrated with existing deep models used in clinical practice, enabling the training of trustworthy models for epilepsy evaluation.
 <h2> Data access </h2>
-<p>Download TUH data from: <a href="https://isip.piconepress.com/projects/tuh_eeg/">TUH Seizure Corpus.</a> It can be preprocessed with the provided notebook. </p>
+<p>Download TUH data from: <a href="https://isip.piconepress.com/projects/tuh_eeg/">TUH Seizure Corpus.</a> </p>
+<p>Download CHB-MIT data from:  <a href="https://physionet.org/content/chbmit/1.0.0/">CHB-MIT Scalp EEG database.</a> </p>
+<p>Download Siena dataset from: <a href="https://physionet.org/content/siena-scalp-eeg/1.0.0/">Siena Scalp EEG database.</a> </p>
 <p>Simulated data can be recreated using the provided matlab scripts. For the exact copy of data used in paper, please email <a href="mailto:dshama1@jhu.edu">dshama1@jhu.edu</a> to setup large file transfer.</p>
 <br>
 
