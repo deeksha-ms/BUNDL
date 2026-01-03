@@ -111,7 +111,8 @@ def train_cel(data_root, modelname, mn_fn,
             torch.save(model.state_dict(), save_loc+savename+ '.pth.tar')
             np.save(save_loc+ savename+'_train.npy', train_losses)
             np.save(save_loc+savename+'_val.npy', val_losses)
-
+	    if len(val_losses) > 10 and val_losses[-1] > min(val_losses[-11:-1]):
+    		break
             #if epoch>(maxiter-10):
             #    count = epoch%10
             #    torch.save(model.state_dict(), save_loc+savename+'_'+ str(count)+'.pth.tar')
