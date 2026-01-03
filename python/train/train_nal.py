@@ -137,6 +137,9 @@ def nal_finetune(data_root, modelname, mn_fn, cvfold,
 
             train_losses.append(epoch_loss)
             val_losses.append(val_epoch_loss)
+	    if len(val_losses) > 10 and val_losses[-1] > min(val_losses[-11:-1]):
+    		break
+
 
             #if epoch_loss <= train_losses[-1] and epoch_val_loss <= val_losses[-1]:
             #torch.save(model.state_dict(), '/home/deeksha/EEG_Sz/GenProc/results/lstmAE_'+pt+str(ch_id)+'.pth.tar')        
