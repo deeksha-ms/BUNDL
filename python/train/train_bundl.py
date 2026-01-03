@@ -140,8 +140,8 @@ def train_bundl(data_root, modelname, mn_fn,
         savename = modelname+'_'+traintype+'_cv'+str(cvfold)+'_'+str(lr)+'_'+str(version)+'_'+str(noise_type)+'_'+str(uq_type)
         model.double()
         model.to(device)
-	if load_weights:
-  		model.load_state_dict(torch.load(load_weights, map_location=device))
+		if load_weights:
+  			model.load_state_dict(torch.load(load_weights, map_location=device))
         optimizer = torch.optim.Adam(model.parameters(), lr=lr)
         sigmoid = torch.nn.Sigmoid()
 
