@@ -1,4 +1,4 @@
-from dataloader import pretrainLoader
+from dataloader import CHBDataset, TUHDataset
 
 import numpy as np
 import torch
@@ -50,8 +50,8 @@ def chbtrain_dul(data_root, modelname='hvit', cvfold=1,
         
         print(val_pts)
         print("\nStarting on fold ", cvfold, count, len(val_pts), len(train_pts))
-        train_set =  pretrainLoader(train_pts, manifest)
-        val_set =  pretrainLoader(val_pts, manifest)
+        train_set =  CHBDataset(train_pts, manifest)
+        val_set =  CHBDataset(val_pts, manifest)
         train_loader = DataLoader(train_set, batch_size=1, shuffle=True, num_workers=2)
         val_loader = DataLoader(val_set, batch_size=1, shuffle=True, num_workers=2)
         
@@ -172,8 +172,8 @@ def tuhtrain_dul(data_root, modelname='hvit', cvfold=1,
         #np.save(save_loc+'valpts'+str(cvfold)+'.npy', val_pts)
         
         print("\nStarting on fold ", cvfold, len(val_pts), len(train_pts))
-        train_set = myDataSet(data_root,cvfold, manifest, train=True)
-        val_set =  myDataSet(data_root,cvfold, manifest, train=False)
+        train_set = TUHDataset(data_root,cvfold, manifest, train=True)
+        val_set =  TUHDataset(data_root,cvfold, manifest, train=False)
         train_loader = DataLoader(train_set, batch_size=1, shuffle=True, num_workers=2)
         val_loader = DataLoader(val_set, batch_size=1, shuffle=True, num_workers=2)
         
