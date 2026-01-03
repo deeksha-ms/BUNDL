@@ -131,8 +131,8 @@ def selfadapt_train(data_root, modelname, mn_fn, cvfold,
             #torch.save(model.state_dict(), '/home/deeksha/EEG_Sz/GenProc/results/lstmAE_'+pt+str(ch_id)+'.pth.tar')        
             print('Epoch: {} \tTraining Loss: {:.6f} \tValidation Loss: {:.6f} '.format(epoch, epoch_loss, val_epoch_loss))
 	
-	    if len(val_losses) > 10 and val_losses[-1] > min(val_losses[-11:-1]):
-    		break
+		    if len(val_losses) > 10 and val_losses[-1] > min(val_losses[-11:-1]):
+	    		break
             torch.save(model.state_dict(), save_loc+savename+ '.pth.tar')
             np.save(save_loc+ savename+'_train.npy', train_losses)
             np.save(save_loc+savename+'_val.npy', val_losses)
